@@ -1,0 +1,28 @@
+.home-box{
+  .ant-pagination-jump-prev .ant-pagination-item-container .ant-pagination-item-link-icon{
+    color: #6bd46d;
+  }
+  .ant-pagination-jump-next .ant-pagination-item-container .ant-pagination-item-link-icon{
+    color: #6bd46d;
+  }
+  .ant-pagination-item{
+    &:hover{
+      border-color: #6bd46d;
+      a{
+        color: #6bd46d;
+      }
+    }
+    &:focus{
+      border-color: #6bd46d;
+      a{
+        color: #6bd46d;
+      }
+    }
+  }
+  .ant-pagination-item-active{
+    border-color: #6bd46d;
+    a{
+      color: #6bd46d;
+    }
+  }
+}

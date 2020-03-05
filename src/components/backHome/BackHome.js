@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const style = {
   width: '30px',
   height: '30px',
-  color: '#13650a',
+  color: '#8561f3',
   position: 'fixed',
   top: '50%',
   right: 0,

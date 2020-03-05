@@ -8,9 +8,18 @@ export default class AdminArticles extends React.Component {
     super(props);
     this.state = {
       list: [],
-      isLoaded: false
+      isLoaded: false,
+      page: 1,
+      rows: 10,
+      total: 10
     };
-    console.log(props)
+
+    this.pagination = {
+      defaultCurrent: 1,
+      defaultPageSize: 10,
+      total: 10
+    }
+
     this.columns = [
       {
         title: '标题',
@@ -58,10 +67,17 @@ export default class AdminArticles extends React.Component {
     this.getArticleList();
   }
   getArticleList = () => {
-    request.get('articleList')
+    request.post('articleList', {
+      params: {
+        page: this.state.page,
+        rows: this.state.rows
+      }
+    })
       .then(res => {
+        this.pagination.total = res.data.data.total;
         this.setState({
-          list: res.data.data,
+          list: res.data.data.list,
+          total: res.data.data.total,
           isLoaded: true
         });
       });
@@ -83,14 +99,21 @@ export default class AdminArticles extends React.Component {
         }
       })
   }
+  changePage = (pagination) => { // 跳转到某页
+    this.setState({
+      page: pagination.current
+    }, () => {
+      this.getArticleList();
+    });
+  }
+
   render() {
     const { list, isLoaded } = this.state;
-    console.log(list)
     return (
       <div>
         <Button style={{marginBottom: '20px'}}><Link to="/admin/article/add">上传文章</Link></Button>
         {
-          isLoaded && <Table style={{ backgroundColor: '#fff' }} columns={this.columns} dataSource={list} />
+          isLoaded && <Table style={{ backgroundColor: '#fff', padding: '20px' }} columns={this.columns} dataSource={list} pagination={this.pagination} onChange={this.changePage}/>
         }
       </div>
     )

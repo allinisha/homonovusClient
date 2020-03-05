@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import request from '../../utils/request';
+import QueueAnim from 'rc-queue-anim';
 
 import './index.scss';
 
@@ -34,25 +34,29 @@ export default class Articles extends React.Component {
       list: []
     };
   }
-  componentDidMount() {
-    this.getList();
-  }
-  getList = () => {
-    request.get('articleList')
-      .then(res => {
-        this.setState({
-          list: res.data.data
-        });
-      })
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps)
+    this.setState({
+      list: nextProps.list
+    });
   }
   render() {
     const { list } = this.state;
     return (
       <div className="articles-box">
         {
-          list.length > 0 ? list.map((article, index) => {
-            return <ArticleItem article={article} isLast={index === list.length - 1} />
-          }) : <div className="no-data">{noDataText}</div>
+          list.length > 0 ? 
+          <QueueAnim 
+            type="top"
+            delay={[400, 0]}
+            duration={[1200, 0]}
+          >
+            {
+              list.map((article, index) => {
+                return <ArticleItem key={article._id} article={article} isLast={index === list.length - 1} /> 
+              })
+            }
+          </QueueAnim> : <div className="no-data">{noDataText}</div>
         }
       </div>
     )

@@ -1,0 +1,38 @@
+.header-box{
+  width: 100%;
+  padding: 20px 0;
+  margin-bottom: 20px;
+  display: flex;
+  .header-container{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    border-radius: 26px;
+    box-shadow: 0 2px 2px 0px rgba(0,0,0,0.12);
+    .header-bg{
+      position: absolute;
+      width: 100%;
+      filter: blur(0.5px);
+    }
+    .header-content{
+      position: relative;
+      text-align: center;
+      font-size: 18px;
+      color: #deffdc;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      letter-spacing: 4px;
+      height: 100%;
+    }
+    .link-list{
+      display: flex;
+      li{
+        color: #fff;
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.css';
+import './index.scss';
 
 export default class Header extends React.Component {
   render() {
@@ -12,7 +12,11 @@ export default class Header extends React.Component {
             <span>/</span>
             <span>Homonovus</span>
           </div>
+          <ul className="link-list">
+            <li>Isha之声</li>
+          </ul>
         </div>
+        
       </div>
     )
   }

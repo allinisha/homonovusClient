@@ -1,18 +1,47 @@
 import React from 'react';
+import Loadable from 'react-loadable';
 import { 
-  BrowserRouter as Router,
+  HashRouter as Router,
   withRouter,
   Switch,
   Route,
   Redirect
 } from 'react-router-dom';
-import { SwitchTransition, CSSTransition } from 'react-transition-group'
+import { SwitchTransition, CSSTransition } from 'react-transition-group';
+
+import Loading from './components/Loading';
+
 import './App.css';
-import Home from './views/front/home/Home';
-import Article from './views/front/article/Article';
-import Login from './views/admin/login/Login';
-import AdminHome from './views/admin/home/Home';
-import ActionArticle from './views/admin/actionArticle/ActionArticle';
+
+const Home = Loadable({
+  loader: () => import('./views/front/home/Home'),
+  loading: Loading,
+  timeout: 10000
+});
+
+const Article = Loadable({
+  loader: () => import('./views/front/article/Article'),
+  loading: Loading,
+  timeout: 10000
+});
+
+const Login = Loadable({
+  loader: () => import('./views/admin/login/Login'),
+  loading: Loading,
+  timeout: 10000
+});
+
+const AdminHome = Loadable({
+  loader: () => import('./views/admin/home/Home'),
+  loading: Loading,
+  timeout: 10000
+});
+
+const ActionArticle = Loadable({
+  loader: () => import('./views/admin/actionArticle/ActionArticle'),
+  loading: Loading,
+  timeout: 10000
+});
 
 const Routes = withRouter(({location}) => (
   <SwitchTransition>
@@ -32,7 +61,7 @@ const Routes = withRouter(({location}) => (
       </Switch>
     </CSSTransition>
   </SwitchTransition>
-))
+));
 
 export default class App extends React.PureComponent {
   render() {
