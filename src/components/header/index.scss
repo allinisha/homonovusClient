@@ -1,37 +1,90 @@
 .header-box{
   width: 100%;
-  padding: 20px 0;
+  padding: 12px 20px 0 20px;
   margin-bottom: 20px;
-  display: flex;
   .header-container{
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
-    background: #fff;
-    position: relative;
-    overflow: hidden;
-    border-radius: 26px;
-    box-shadow: 0 2px 2px 0px rgba(0,0,0,0.12);
-    .header-bg{
-      position: absolute;
-      width: 100%;
-      filter: blur(0.5px);
-    }
     .header-content{
       position: relative;
       text-align: center;
       font-size: 18px;
-      color: #deffdc;
+      color: #50734d;
       display: flex;
       flex-direction: column;
       justify-content: center;
       letter-spacing: 4px;
       height: 100%;
+      .emoji-mart-emoji{
+        display: none;
+      }
     }
-    .link-list{
+  }
+  .banner{
+    display: flex;
+    .banner-item{
+      width: 350px;
+      height: 200px;
+      margin-right: 20px;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      img {
+        width: 100%;
+        filter: opacity(0.9);
+      }
+      .content{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 10px 20px;
+        border-radius: 16px;
+        background: linear-gradient(-25deg, #42da6e30 , #2fc9a1a1);
+        .title{
+          font-size: 20px;
+          color: #fff;
+          font-weight: bold;
+          margin-bottom: 8px;
+        }
+        .bottom{
+          font-size: 12px;
+          color: #fff;
+          span{
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+    
+  }
+}
+
+@media only screen and (max-width: 1125px) {
+  .header-box{
+    .header-container{
+      .header-content{
+        font-size: 1.2em;
+        color: #505f86;
+        flex-direction: row;
+        .emoji-mart-emoji{
+          display: block;
+        }
+        span{
+          margin: 0 0.4em;
+        }
+      }
+    }
+    .banner{
       display: flex;
-      li{
-        color: #fff;
+      .banner-item{
+        width: 350px;
+        height: 200px;
+        margin-right: 20px;
+        border-radius: 16px;
+        overflow: hidden;
+        position: relative;
+        img {
+          width: 100%;
+          filter: opacity(0.9);
+        }
       }
     }
   }

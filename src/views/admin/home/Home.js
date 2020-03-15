@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layout } from 'antd';
-import './Home.css';
+import './index.scss';
 
 import AdminArticles from '../../../components/adminArticles/AdminArticles';
 const { Header, Content, Footer } = Layout;

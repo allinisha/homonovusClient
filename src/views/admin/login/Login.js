@@ -1,7 +1,7 @@
 import React from 'react';
 import request from '../../../utils/request';
 import { notification } from 'antd';
-import './Login.css'
+import './Login.scss'
 
 export default class Login extends React.Component {
   constructor(props) {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { PageHeader } from 'antd';
+import './actionArticle.scss';
 
 import ArticleForm from './Form'
 
@@ -15,7 +16,7 @@ export default class AddArticle extends React.Component {
     const { mode, id } = this.state;
     const { history } = this.props;
     return  (
-      <div>
+      <div className="admin-article-box">
         <PageHeader 
           onBack={()=>this.props.history.push('/admin/index')}
           title='返回'

@@ -14,7 +14,7 @@ const formItemLayout = {
 }
 
 const formBtnLayout = {
-  wrapperCol: { span: 16, offset: 2 }
+  wrapperCol: { span: 16, offset: 0 }
 }
 
 const editConfig = {

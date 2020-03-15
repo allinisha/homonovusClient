@@ -7,7 +7,8 @@ const drawerBoxStyle = {
   position: 'fixed',
   left: 0,
   top: 0,
-  display: 'none'
+  display: 'none',
+  zIndex: 10
 }
 
 const drawerMaskStyle = {

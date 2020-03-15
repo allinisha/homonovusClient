@@ -1,0 +1,38 @@
+.card-box{
+  width: 160px;
+  height: 160px;
+  border-radius: 30px;
+  padding-left: 20px;
+  .card-icon{
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    margin: 20px 30px 20px 0;
+  }
+  span{
+    font-size: 20px;
+    color: #37365b;
+    font-weight: bold;
+  }
+  &.orange{
+    background: #fef7e5;
+    .card-icon{
+      background: linear-gradient(180deg, #fcb707 10%, #fa8615);
+      box-shadow: 6px 6px 20px 2px rgba(250, 134, 21,.3);
+    }
+  }
+  &.blue{
+    background: #ededff;
+    .card-icon{
+      background: linear-gradient(180deg, #5771ff 10%, #5c59fe);
+      box-shadow: 6px 6px 20px 2px rgba(25, 21, 250, 0.3);
+    }
+  }
+  &.green{
+    background: #e2f7f0;
+    .card-icon{
+      background: linear-gradient(180deg, #43dd6e 10%, #2fcaa0);
+      box-shadow: 6px 6px 20px 2px rgba(21, 250, 113, 0.3);
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.navbar-box{
+  margin-bottom: 20px;
+  .navbar{
+    width: 100%;
+    // background: linear-gradient(0deg, #42da6e00 , #ffffff);
+    border-radius: 0 0 16px 16px;
+    list-style: none;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    li{
+      color: #4fe677;
+      margin-right: 20px;
+      font-size: 14px;
+      padding: 4px 10px;
+      border-radius: 10px;
+      margin: 4px 6px;
+      // background: #effff0;
+      a{
+        color: #4fe677;
+      }
+    }
+  }
+}

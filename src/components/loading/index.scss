@@ -1,0 +1,11 @@
+.loading-box{
+  font-size: 1.2em;
+  margin-top: 20px;
+  text-align: center;
+  .loading-body{
+    color: #bbb;
+  }
+  .loading-error{
+    color:#d63e3e;
+  }
+}
